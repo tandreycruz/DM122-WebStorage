@@ -33,6 +33,36 @@ db.on("populate", async () => {
 
 db.open();
 
+function byChar(char) {
+  return function (poke) {
+    console.log(poke.name);
+    return poke.name.includes(char);
+  };
+}
 
-const pokemon = await db.pokemon.toArray();
-console.log(pokemon);
+const pokemonList = await db.pokemon
+  // .where("name")
+  // .startsWithIgnoreCase("c")
+  // .filter(byChar("a"))
+  .toArray();
+
+console.log(pokemonList);
+
+const pokeHTML = pokemonList.map(toHTML).join("");
+document.body.innerHTML = pokeHTML;
+
+function toHTML(poke) {
+  return `
+    <div>
+      <div class="card" style="border-color: var(--grass);">
+        <div class="card-id" style="color: var(--grass);">${poke.id}</div>
+        <div class="card-image">
+          <img alt="${poke.name}" src="${poke.picture}">
+        </div>
+      </div>
+      <div class="card-name" style="background-color: var(--grass);">
+        ${poke.name}
+      </div>
+    </div>
+  `;
+}
