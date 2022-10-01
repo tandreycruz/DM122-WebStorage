@@ -32,3 +32,7 @@ db.on("populate", async () => {
 });
 
 db.open();
+
+
+const pokemon = await db.pokemon.toArray();
+console.log(pokemon);
