@@ -15,7 +15,7 @@
 
 output {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto 1fr auto;
   gap: 2px;
   margin-top: 15px;
 }
@@ -23,4 +23,9 @@ output {
 output span {
   background-color: rgb(201, 230, 255);
   padding: 4px;
+}
+
+output img {
+  cursor: pointer;
+  width: 10px;
 }
