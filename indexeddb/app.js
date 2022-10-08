@@ -71,6 +71,7 @@ async function retrieveData() {
     `;
   }
 }
+retrieveData();
 
 async function downloadImage(imageUrl) {
   const response = await fetch(imageUrl);
