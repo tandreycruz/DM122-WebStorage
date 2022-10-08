@@ -106,8 +106,8 @@ select {
 }
 
 section {
+  width: 100%;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   gap: 8px;
   padding-top: 16px;
@@ -118,6 +118,7 @@ a {
 }
 
 .card-wrapper {
+  width: 104px;
   display: flex;
   flex-direction: column;
 }
