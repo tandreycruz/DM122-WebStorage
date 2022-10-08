@@ -25,6 +25,7 @@ db.on("populate", async () => {
       picture: await downloadImage(buildUrl(25)),
     },
   ]);
+  retrieveData();
 });
 
 db.open();
@@ -70,9 +71,7 @@ async function retrieveData() {
     `;
   }
 }
-retrieveData();
 
-// Download and store an image
 async function downloadImage(imageUrl) {
   const response = await fetch(imageUrl);
   const blob = await response.blob();
