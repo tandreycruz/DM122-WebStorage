@@ -48,10 +48,16 @@ header {
 }
 
 input,
-select {
+select,
+button {
   background: var(--white-background);
   border: 1px solid var(--light-text);
   border-radius: 8px;
+  padding: 4px;
+}
+
+button {
+  background: none;
 }
 
 .header-upper-part {
