@@ -74,3 +74,15 @@ async function downloadImage(imageUrl) {
   const blob = await response.blob();
   return blob;
 }
+
+function saveFormData(event) {
+  event.preventDefault();
+  const form = event.target;
+  console.log(form.name.value);
+  console.log(form.pokeNumber.value);
+  return false;
+}
+
+const form = document.querySelector('form');
+form.addEventListener("submit", saveFormData);
+
