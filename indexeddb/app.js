@@ -40,33 +40,37 @@ function byChar(char) {
   };
 }
 
-const pokemonList = await db.pokemon
-  // .where("name")
-  // .startsWithIgnoreCase("c")
-  // .filter(byChar("a"))
-  .toArray();
+async function retrieveData() {
+  const pokemonList = await db.pokemon
+    // .where("name")
+    // .startsWithIgnoreCase("c")
+    // .filter(byChar("a"))
+    .toArray();
 
-console.log(pokemonList);
-const section = document.createElement("section");
-const pokeHTML = pokemonList.map(toHTML).join("");
-section.innerHTML = pokeHTML;
-document.body.appendChild(section);
+  const section = document.querySelector("section");
+  const pokeHTML = pokemonList.map(toHTML).join("");
+  section.innerHTML = pokeHTML;
+  document.body.appendChild(section);
 
-function toHTML(poke) {
-  return `
-      <a href="#" class="card-wrapper">
-        <div class="card" style="border-color: var(--grass);">
-          <div class="card-id" style="color: var(--grass);">${poke.id}</div>
-          <div class="card-image">
-            <img alt="${poke.name}" src="${URL.createObjectURL(poke.picture)}">
+  function toHTML(poke) {
+    return `
+        <a href="#" class="card-wrapper">
+          <div class="card" style="border-color: var(--grass);">
+            <div class="card-id" style="color: var(--grass);">${poke.id}</div>
+            <div class="card-image">
+              <img alt="${poke.name}" src="${URL.createObjectURL(
+      poke.picture
+    )}">
+            </div>
           </div>
-        </div>
-        <div class="card-name" style="background-color: var(--grass);">
-          ${poke.name}
-        </div>
-      </a>
-  `;
+          <div class="card-name" style="background-color: var(--grass);">
+            ${poke.name}
+          </div>
+        </a>
+    `;
+  }
 }
+retrieveData();
 
 // Download and store an image
 async function downloadImage(imageUrl) {
@@ -82,6 +86,7 @@ async function saveFormData(event) {
     name: form.name.value,
     pokeNumber: form.pokeNumber.value,
   });
+  retrieveData();
   form.reset();
   form.name.focus();
   return false;
