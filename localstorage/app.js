@@ -18,6 +18,8 @@ function loadSavedData() {
         return;
     }
     console.log(`[app.js] ${email}`);
+    const spanEmail = document.querySelector('.email');
+    spanEmail.textContent = email;
 }
 
 loadSavedData();
