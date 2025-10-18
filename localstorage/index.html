@@ -8,12 +8,12 @@
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
     >
-    <script src="app.js" defer></script>
+    <script type="module" src="src/app.js"></script>
 </head>
 <body>
     <main class="container">
         <hgroup>
-            <h2>HTML5 LocalStorage API</h2>
+            <h1>HTML5 LocalStorage API</h1>
             <p>How to use <code>window.localStorage</code> to persist data</p>
         </hgroup>
         <form>
@@ -29,20 +29,22 @@
             </fieldset>
         </form>
         <section>
-            <table>
+            <p id="no-subscriber">No subscribers found. Add a new one using the form above!</p>
+            <table hidden>
                 <thead>
                     <th>Date</th>
                     <th>Email</th>
                     <th>&nbsp;</th>
                 </thead>
                 <tbody>
-                    <td>Oct 10, 2025</td>
-                    <td>taibe@inatel.br</td>
-                    <td>🗑️</td>
+                    <!-- <tr>
+                        <td>Oct 10, 2025</td>
+                        <td>taibe@inatel.br</td>
+                        <td>🗑️</td>
+                    </tr> -->                   
                 </tbody>
             </table>
-        </section>
-        <span class="email"></span>
+        </section>        
     </main>    
 </body>
 </html>
