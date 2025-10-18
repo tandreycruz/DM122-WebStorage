@@ -7,6 +7,7 @@ form.addEventListener("submit", (event) => {
     console.log("email: ", form.email.value);
     window.localStorage.setItem('email', form.email.value);
     console.log("[app.js] email saved!");
+    form.reset();
     loadSavedData();
 });
 
