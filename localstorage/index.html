@@ -4,13 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML5 Local Storage API</title>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    >
     <script src="app.js" defer></script>
 </head>
 <body>
     <main class="container">
-        <form action="">            
-            <input type="email" name="email">            
-            <button type="submit">Save</button>
+        <hgroup>
+            <h2>HTML5 LocalStorage API</h2>
+            <p>How to use <code>window.localStorage</code> to persist data</p>
+        </hgroup>
+        <form>
+            <fieldset role="group">
+                <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                autocomplete="email"
+                required                
+                />
+                <button type="submit">Subscribe</button>
+            </fieldset>
         </form>
         <span class="email"></span>
     </main>    
