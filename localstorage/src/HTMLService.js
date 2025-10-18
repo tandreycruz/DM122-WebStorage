@@ -24,13 +24,21 @@ export default class HTMLService {
         const table = document.querySelector("table");
         if (!table || !subscriber) return;
         const tbody = table.tBodies[0];
-        const row = tbody.insertRow();
-        const dateCell = row.insertCell();
-        const emailCell = row.insertCell();
-        const deleteCell = row.insertCell();
-        dateCell.textContent = subscriber.createdDate.toLocaleString("pt-BR");
-        emailCell.textContent = subscriber.email;
-        deleteCell.textContent = "🗑️";
+        //const row = tbody.insertRow();
+        //const dateCell = row.insertCell();
+        //const emailCell = row.insertCell();
+        //const deleteCell = row.insertCell();
+        //dateCell.textContent = subscriber.createdDate.toLocaleString("pt-BR");
+        //emailCell.textContent = subscriber.email;
+        //deleteCell.textContent = "🗑️";
+        const row = `
+            <tr>
+                <td>${subscriber.createdDate.toLocaleString("pt-BR")}</td>
+                <td>${subscriber.email}</td>
+                <td>🗑️</td>
+            </tr>
+        `;
+        tbody.insertAdjacentHTML("beforeend", row);
         table.hidden = false;
     }
 }
