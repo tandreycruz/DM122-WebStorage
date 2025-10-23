@@ -58,11 +58,11 @@ export default class HTMLService {
                 <td>${new Date(subscriber.createdDate).toLocaleString("pt-BR")}</td>
                 <td>${subscriber.email}</td>
                 <td>
-                <span
+                <button
                     data-email="${subscriber.email}"
                     class="delete-sub">
                     🗑️
-                    </span>
+                    </button>
                 </td>
             </tr>
         `;
