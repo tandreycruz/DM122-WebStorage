@@ -8,6 +8,7 @@
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
     >
+    <link rel="stylesheet" href="src/style.css" />
     <script type="module" src="src/app.js"></script>
 </head>
 <body>
@@ -19,11 +20,13 @@
         <form>
             <fieldset role="group">
                 <input
-                type="email"
-                name="email"
-                placeholder="Enter your email"
-                autocomplete="email"
-                required                
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    autocomplete="email"                    
+                    value="taibe@inatel.br"
+                    autofocus
+                    required                
                 />
                 <button type="submit">Subscribe</button>
             </fieldset>
@@ -32,9 +35,11 @@
             <p id="no-subscriber">No subscribers found. Add a new one using the form above!</p>
             <table hidden>
                 <thead>
-                    <th>Date</th>
-                    <th>Email</th>
-                    <th>&nbsp;</th>
+                    <tr>
+                        <th>Date</th>
+                        <th>Email</th>
+                        <th>&nbsp;</th>
+                    </tr>
                 </thead>
                 <tbody></tbody>
             </table>
