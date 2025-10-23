@@ -43,7 +43,7 @@ export default class SubscriberService {
     serialize() {
         const subsString = JSON.stringify(this.#db);
         window.localStorage.setItem(DB_KEY, subsString);
-        console.log(`👁️ [SubscriberService.js] finish serialization`);
+        console.log(`👁️ [SubscriberService.js] finished serialization`);
     }
 
     deserialized() {

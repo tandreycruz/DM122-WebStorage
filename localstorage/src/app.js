@@ -1,5 +1,5 @@
-import HTMLService from "./HTMLService.js"
-import SubscriberService from "./SubscriberService.js";
+import HTMLService from "./modules/HTMLService.js"
+import SubscriberService from "./modules/SubscriberService.js";
 
 class App {
     constructor() {        
