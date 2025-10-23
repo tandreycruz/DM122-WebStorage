@@ -29,10 +29,12 @@ export default class HTMLService {
     
     setFormListener() {
         const form = document.querySelector("form");
-        form.addEventListener("submit", (event) => {
+        form.addEventListener("submit", async (event) => {
             event.preventDefault();
             console.log("[HTMLService.js] form trigged!");
-            this.save(form.email.value);
+            await this.save(form.email.value);
+            form.reset();
+            form.email.focus();
         });
     }
 
