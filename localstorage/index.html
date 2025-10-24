@@ -42,7 +42,40 @@
                 </thead>
                 <tbody></tbody>
             </table>
-        </section>        
+        </section>
+        <!-- Dialog -->
+         <dialog id="confirm-dialog">
+            <article>
+                <header>
+                <button
+                    aria-label="Close"
+                    rel="prev"
+                    commandfor="confirm-dialog"
+                    command="request-close"
+                    value="closed"
+                ></button>
+                <p>
+                    <strong>⚠️ Confirm deletion!?</strong>
+                </p>
+                </header>
+                <p>
+                    Are you sure to delete email <span>default@email.com</span>?</span>
+                </p>
+                <footer>
+                    <button
+                        class="secondary"
+                        commandfor="confirm-dialog"
+                        command="request-close"
+                        value="cancelled"
+                    >Cancel</button>
+                    <button
+                        commandfor="confirm-dialog"
+                        command="request-close"
+                        value="confirmed"
+                    >Confirm</button>
+                </footer>
+            </article>
+        </dialog>
     </main>    
 </body>
 </html>
