@@ -4,7 +4,7 @@ button.addEventListener("click", async () => {
   console.log(`👁️ [app.js] button clicked`);
   // const randomId = Math.floor(Math.random() * 151) + 1;
   // const url = `https://pokeapi.co/api/v2/pokemon/${randomId}`;
-  const url = `https://api.github.com/users/edysegura`;
+  const url = `https://api.github.com/users/tandreycruz`;
   button.setAttribute("aria-busy", true);
   const data = await fetchData(url);
   button.removeAttribute("aria-busy");
