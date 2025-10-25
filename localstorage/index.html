@@ -1,81 +1,86 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML5 Local Storage API</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML5 LocalStorage API</title>
     <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
-    >
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
     <link rel="stylesheet" href="src/style.css" />
     <script type="module" src="src/app.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <main class="container">
-        <hgroup>
-            <h1>HTML5 LocalStorage API</h1>
-            <p>How to use <code>window.localStorage</code> to persist data</p>
-        </hgroup>
-        <form>
-            <fieldset role="group">
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Enter your email"
-                    autocomplete="off"                    
-                    autofocus
-                    required                
-                />
-                <button type="submit">Subscribe</button>
-            </fieldset>
-        </form>
-        <section>
-            <p id="no-subscriber">No subscribers found. Add a new one using the form above!</p>
-            <table hidden>
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Email</th>
-                        <th>&nbsp;</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        </section>
-        <!-- Dialog -->
-         <dialog id="confirm-dialog">
-            <article>
-                <header>
-                <button
-                    aria-label="Close"
-                    rel="prev"
-                    commandfor="confirm-dialog"
-                    command="request-close"
-                    value="closed"
-                ></button>
-                <p>
-                    <strong>⚠️ Confirm deletion!?</strong>
-                </p>
-                </header>
-                <p>
-                    Are you sure to delete email <span>default@email.com</span>?</span>
-                </p>
-                <footer>
-                    <button
-                        class="secondary"
-                        commandfor="confirm-dialog"
-                        command="request-close"
-                        value="cancelled"
-                    >Cancel</button>
-                    <button
-                        commandfor="confirm-dialog"
-                        command="request-close"
-                        value="confirmed"
-                    >Confirm</button>
-                </footer>
-            </article>
-        </dialog>
-    </main>    
-</body>
+      <hgroup>
+        <h1>HTML5 LocalStorage API</h1>
+        <p>How to use <code>window.localStorage</code> to persist data</p>
+      </hgroup>
+      <form>
+        <fieldset role="group">
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            autocomplete="off"
+            autofocus
+            required
+          />
+          <button type="submit">Subscribe</button>
+        </fieldset>
+      </form>
+      <section>
+        <p id="no-subscriber">
+          No subscribers found. Add a new one using the form above!
+        </p>
+        <table hidden>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Email</th>
+              <th>&nbsp;</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+      <!-- Dialog -->
+      <dialog id="confirm-dialog">
+        <article>
+          <header>
+            <button
+              aria-label="Close"
+              rel="prev"
+              commandfor="confirm-dialog"
+              command="request-close"
+              value="closed"
+            ></button>
+            <p>
+              <strong>⚠️ Confirm deletion!?</strong>
+            </p>
+          </header>
+          <p>Are you sure to delete email <span>default@email.com</span>?</p>
+          <footer>
+            <button
+              class="secondary"
+              commandfor="confirm-dialog"
+              command="close"
+              value="cancelled"
+            >
+              Cancel
+            </button>
+            <button
+              commandfor="confirm-dialog"
+              command="close"
+              value="confirmed"
+            >
+              Confirm
+            </button>
+          </footer>
+        </article>
+      </dialog>
+    </main>
+  </body>
 </html>
